@@ -282,6 +282,11 @@ FC2Form[exp_, OptionsPattern[]] :=
 				SyntaxQ], _Symbol, -1];
 
 		symbols = Union[symbols,extravars,Rsy[[All,2]]];
+		
+(*--------------------------------------------------------------------*)
+symbols = Complement[symbols,formvecs,forminds,cfuns];
+(*--------------------------------------------------------------------*)	
+
 		If[ dim =!= 4,
 			PrependTo[symbols,dim]
 		];
